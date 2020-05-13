@@ -1,0 +1,39 @@
+
+<h1>Cadastre Alunos na sua equipe</h1>
+
+<form action="@{Alunos.salvar}" method="POST">
+	Nome do Aluno: <input type="text" name="aluno.nome" value="${aluno?.nome}"><br>
+	Matricula do Aluno: <input type="text" name="aluno.matricula" value="${aluno?.matricula}"><br> 
+	Equipe: 
+	<select name="aluno.equipe.id">
+		<option></option> 
+		#{list items:listaDeEquipes, as:'lista'}
+		<option value="${lista.id}">${lista.nome}</option> 
+		#{/list}
+	</select><br>
+	
+	<!-- Essa parte ainda não está funcionando -->
+	
+	<!-- #{if aluno != null && aluno.listaAlunos != null}
+					#{list items:aluno.listaAlunos, as: 'alunoEquipe'}
+						<input type='hidden' name='aluno.equipe.id' value='${aluno.equipe?.id}'>
+							
+							${alunoEquipe.nome} 
+														
+					#{/list}
+						
+	#{/if}
+	#{else}
+		Nao existem alunos nessa equipe
+	#{/else} --> 
+
+
+	<button >Salvar</button>
+
+</form>
+	<button><a style="text-decoration: none;"href="@{Usuarios.index}">Finalizar Cadastro</a></button>
+
+	
+
+
+

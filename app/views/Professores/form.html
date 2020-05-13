@@ -1,0 +1,10 @@
+<h1>Cadastro de Professores</h1>
+
+<form action="@{Professores.salvar}" method="POST">
+	
+	<input type="hidden" name="professor.id" value="${professor?.id}">
+	
+	Nome:<input type="text" name="professor.nome" value="${professor?.nome}"><br>
+	Matricula:<input type="text" name="professor.matricula" value="${professor?.matricula}"><br>
+	<button>Cadastrar</button>
+</form>

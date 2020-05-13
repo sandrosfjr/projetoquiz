@@ -1,0 +1,11 @@
+<h1>Lista de Professores</h1>
+
+#{list items:professores, as:'professor'} 
+	<ul>
+		<li>${professor.nome} - ${professor.matricula}</li>
+	</ul>
+#{/list}
+#{else}
+	Não há professores cadastrados
+#{/else}
+	

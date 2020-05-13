@@ -1,0 +1,46 @@
+<h1>Cadastro de Equipes</h1>
+
+<form action="@{Equipes.salvar}" method="POST" enctype="multipart/form-data">
+
+	<input type="hidden" name="equipe.id" value="${equipe?.id}">
+	
+	Nome da Equipe: <input type="text" name="equipe.nome" value="${equipe?.nome}"><br>
+	
+	Foto da Equipe:
+	<input type="file" value="${equipe?.foto}" name="equipe.foto"><br>
+	
+	<button type="button"onclick="gerarCodigo();" name="">Gerar Codigo</button><br>
+	<p>Guarde esse código para ter acesso a sua equipe: </p>
+	<div id="b1"></div>
+	<input type="hidden" name="usuario.equipe.id" value="${usuario?.equipe?.id}">
+	<br>
+	Confirme o código recebido acima: <input type="text" name="equipe.codigo" value="${equipe?.codigo}"><br>
+	
+	Senha:
+	<input type="password" name="equipe.senha"><br>
+	<button>Cadastrar Equipe</button>
+	
+	
+</form>
+
+	
+<script>
+	function gerarCodigo() {
+
+		
+		var quant = 8;
+		var codigo = "";
+		for(var a = 0; a< quant; a++) {
+
+			var codigoGerado = Math.round(Math.random() * quant);
+			codigo += codigoGerado;
+		}
+		b1.innerText = codigo;
+		var gerou = true;
+		
+		if(gerou) {
+			gerarCodigo = false;
+		}
+
+	}
+</script>

@@ -1,0 +1,12 @@
+
+<a href="@{Equipes.form}">Cadastrar Equipe</a> <br>${session.get("usuario.email")} <a href="@{Login.sair}">Sair</a>
+
+<h1>InfoQuiz</h1>
+<input type="hidden" value="${usuario?.id}" name="usuario.id">	
+
+<p>Seja bem vindo, ${session.get("usuario.nome")}</p>
+
+	<!-- Aqui ainda não está funcionando a questão de existir ou não uma equipe para o usuario -->
+			
+	<a href="@{Login.loginEquipe}">Login Equipe</a>
+<br>

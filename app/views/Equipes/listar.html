@@ -1,0 +1,6 @@
+<h1>Listagem de Equipes</h1>
+
+#{list items:listaEquipes, as:'e'}
+	Equipe: ${e.nome} - ${e.codigo} - <img height="150px" width="150px" src="@{Equipes.fotoEquipe(e.id)}"> <br>
+#{/list}	
+

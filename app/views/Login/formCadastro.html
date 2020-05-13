@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Formulario de Cadastro de Usuario' /}
+
+<h1>Cadastre-se</h1>
+
+<form action="@{Usuarios.salvar}" method="POST" enctype="multipart/form-data">
+	
+	<input type="hidden" name="usuario.id" value="${usuario?.id}">
+	
+	
+	#{if usuario?.foto?.exists()}
+		<img height="150px" width="150px" src="@{Usuarios.fotoUsuario(usuario.id)}"><br>
+	#{/if}
+	
+	Foto do Usuario: <input type="file" value="${usuario?.foto}" name="usuario.foto"><br>
+	
+	Nome de Usuario: <input type="text" name="usuario.nome" value="${usuario?.nome}"><br>
+	Email: <input type="email" name="usuario.email" value="${usuario?.email}"><br>
+	Senha<input type="password" name="senha"><br>
+	Tipo
+	<select name="usuario.tipo">
+		<option value="0" #{if usuario?.tipo == 0} selected #{/if}>Professor</option>
+		<option value="1" #{if usuario?.tipo == 1} selected #{/if}>Aluno</option>
+	</select><br>
+	
+	
+		<button>Cadastrar</button>
+</form>

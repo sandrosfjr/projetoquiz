@@ -1,0 +1,14 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de Usuarios' /}
+
+<h1>Listagem de Usuarios</h1>
+
+<input type="hidden" name="usuario.id" value="${usuario?.id}">
+
+#{list items:lista, as:'a'}
+	<img height="150px" width="150px" src="@{Usuarios.fotoUsuario(a.id)}">
+	<a href="@{Usuarios.editar(a.id)}">Editar</a>
+	<a href="@{Usuarios.remover(a.id)}">Remover</a>
+	${a.nome} - ${a.email} <br>
+#{/list}
+
